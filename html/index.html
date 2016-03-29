@@ -31,10 +31,8 @@
 </head>
 
 <body>
-
-    	<img src="../Content/images/banner.png"  class="banner" title="" id="top" />
- 
-    	<img src="../Content/images/promotion.png" title=""  class="promotion"/>
+    <img src="../Content/images/banner.png" class="banner" title="" id="top" />
+    <img src="../Content/images/promotion.png" title="" class="promotion" />
     <div class="box">
         <div class="box1">
             <div class="header fy pr">
@@ -61,7 +59,7 @@
                 <p class="introduce">LG 润膏</p>
                 <p class="price">&yen;<span>39.00</span>+29积分</p>
             </div>
-            <a href="" class="more">查看更多</a>
+            <a href="foolShopcar-yellow.html" class="more">查看更多</a>
         </div>
         <div class="box2">
             <div class="header fp pr">
@@ -83,10 +81,10 @@
                 <p class="introduce">亦博肌活倍润精华露</p>
                 <p class="price">&yen;<span>529.00</span>+265积分</p>
             </div>
-          <a href="" class="more">查看更多</a>
+            <a href="foolShopcar-popo.html" class="more">查看更多</a>
         </div>
         <div class="box3">
-             <div class="header fy pr">
+            <div class="header fy pr">
                 <h1>SIMPLE&nbsp;AND&nbsp;ROUTIQUE</h1>
                 <h2 class="by">潮愚乐&nbsp;简单精爆</h2>
             </div>
@@ -105,7 +103,7 @@
                 <p class="introduce">流行墨镜5001-BK_2</p>
                 <p class="price">&yen;<span>472.00</span>+236积分</p>
             </div>
-           <a href="" class="more">查看更多</a>
+            <a href="foolShopcar-yellow.html" class="more">查看更多</a>
         </div>
         <div class="box4">
             <div class="header fp pr">
@@ -127,7 +125,7 @@
                 <p class="introduce">碧雅德雪纺丰彩唇蜜</p>
                 <p class="price">&yen;<span>45.00</span>+23积分</p>
             </div>
-         <a href="" class="more">查看更多</a>
+            <a href="foolShopcar-popo.html" class="more">查看更多</a>
         </div>
         <div class="box5">
             <div class="header fy pr">
@@ -149,7 +147,7 @@
                 <p class="introduce">秀丽韩本超保湿2件企划套装</p>
                 <p class="price">&yen;<span>290.00</span>+148积分</p>
             </div>
-          <a href="" class="more">查看更多</a>
+            <a href="foolShopcar-yellow.html" class="more">查看更多</a>
         </div>
         <div class="box6">
             <div class="header fp pr">
@@ -171,7 +169,7 @@
                 <p class="introduce">小a企鹅儿童驱蚊喷雾液</p>
                 <p class="price">&yen;<span>22.00</span>+16积分</p>
             </div>
-          <a href="" class="more">查看更多</a> 
+            <a href="foolShopcar-popo.html" class="more">查看更多</a>
         </div>
         <div class="box7">
             <div class="header fr pr">
@@ -188,17 +186,47 @@
                 <p class="introduce">真酵母葡聚糖褐藻糖胶白桦茸</p>
                 <p class="price">&yen;<span>570.00</span>+288积分</p>
             </div>
-          <a class="more" id="btn-return" href="#top">返回顶部</a>
+            <a class="more" id="btn-return" href="" onclick="goTop();return false;">返回顶部</a>
         </div>
     </div>
-   <script type="text/javascript">
-       function top() {
-           // body...
-           var btn = document.getElementById('btn-return');
-          
-       }
+    <script type="text/javascript">
+    /*返回顶部*/
+    function goTop(acceleration, time) {
+        acceleration = acceleration || 0.1;
+        time = time || 16;
+        var x1 = 0;
+        var y1 = 0;
+        var x2 = 0;
+        var y2 = 0;
+        var x3 = 0;
+        var y3 = 0;
+        if (document.documentElement) {
+            x1 = document.documentElement.scrollLeft || 0;
+            y1 = document.documentElement.scrollTop || 0;
+        }
+        if (document.body) {
+            x2 = document.body.scrollLeft || 0;
+            y2 = document.body.scrollTop || 0;
+        }
+        var x3 = window.scrollX || 0;
+        var y3 = window.scrollY || 0;
+        // 滚动条到页面顶部的水平距离 
+        var x = Math.max(x1, Math.max(x2, x3));
+        // 滚动条到页面顶部的垂直距离 
+        var y = Math.max(y1, Math.max(y2, y3));
 
-   </script>
+        // 滚动距离 = 目前距离 / 速度, 因为距离原来越小, 速度是大于 1 的数, 所以滚动距离会越来越小 
+        var speed = 1 + acceleration;
+        window.scrollTo(Math.floor(x / speed), Math.floor(y / speed));
+
+        // 如果距离不为零, 继续调用迭代本函数 
+        if (x > 0 || y > 0) {
+            var invokeFunction = "goTop(" + acceleration + ", " + time + ")";
+            window.setTimeout(invokeFunction, time);
+        }
+    }
+    </script>
+    </script>
 </body>
 
 </html>

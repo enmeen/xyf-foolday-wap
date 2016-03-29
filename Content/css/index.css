@@ -1,5 +1,5 @@
 
-body{max-width: 650px;margin:0 auto;font-family: "微软雅黑";}
+body{max-width: 650px;height: 34.7rem; margin:0 auto;font-family: "微软雅黑";}
 .box>div{box-sizing: border-box;padding-top: 0.4rem;position: relative;}
 /* banner promotion*/
 .banner,.promotion{width: 100%;vertical-align: top;box-sizing: border-box;}
